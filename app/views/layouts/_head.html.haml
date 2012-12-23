@@ -1,0 +1,11 @@
+= render :partial => "layouts/meta"
+
+= stylesheet_link_tag   'application', :media => 'all'
+%script{:src=>"//platform.twitter.com/widgets.js"}
+= javascript_include_tag 'application'
+
+= csrf_meta_tags
+= render :partial => 'layouts/shim'
+
+/- if Rails.env.production?
+/  = render :partial => 'layouts/scripts'

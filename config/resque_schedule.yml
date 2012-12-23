@@ -1,0 +1,5 @@
+#queue_new_tracks:
+#  cron: "1 */1 * * *" # every hour
+#  class: QueueNewTracks
+#  args:
+#  description: "Checks for new tracks"

@@ -1,0 +1,17 @@
+%header
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container
+        #topbar
+          %a.brand{:href => root_url} VideoNews
+          /.sign-in
+          /  - if user_signed_in?
+          /    .dropdown
+          /      %a{:class=>"dropdown-toggle", :id=>"drop4", :role=>"button", :'data-toggle'=>"dropdown", :href=>"#"}
+          /        = current_user.name
+          /        %b.caret
+          /      %ul{:id=>"menu1", :class=>"dropdown-menu", :role=>"menu", :'aria-labelledby'=>"drop4"}
+          /        %li
+          /          = link_to 'Sign Out', destroy_user_session_path, :method => :delete, :tabindex => '-1', :target => '_blank'
+          /  - else
+          /    %a.register-btn.btn.btn-primary{:href => user_omniauth_authorize_path(:facebook), :target => '_blank'} Login

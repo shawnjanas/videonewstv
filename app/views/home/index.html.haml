@@ -1,0 +1,6 @@
+- if current_user.blank?
+  Sign In
+  = link_to 'Connect via Twitter', user_omniauth_authorize_path(:twitter)
+- else
+  = "Welcome #{current_user.name}!"
+  = image_tag current_user.image

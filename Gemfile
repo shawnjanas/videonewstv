@@ -8,9 +8,11 @@ gem 'redis'
 gem 'resque', "~> 1.22.0"
 gem 'resque-scheduler'
 
-gem 'omniauth'
+gem 'twitter'
+
 gem 'oauth2'
-gem 'omniauth-facebook'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 gem 'pg'
 gem 'unicorn'

@@ -1,0 +1,13 @@
+!!!
+%html{:lang => 'en'}
+  %head
+    = render :partial => 'layouts/head'
+  %body
+    = render :partial => 'layouts/topbar'
+    - unless notice.blank?
+      %p{:class=>"notice"}= notice
+    - unless alert.blank?
+      %p{:class=>"alert"}= alert
+    .container
+      = yield
+    = render :partial => 'layouts/footer'

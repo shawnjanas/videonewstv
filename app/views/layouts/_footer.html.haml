@@ -1,0 +1,17 @@
+%footer
+  .container
+    .title
+      Social News
+/    .social-connect
+/      .social#social-fb
+/        .fb-like{:'data-href'=>"http://www.facebook.com/TurnChannel", :'data-send'=>"false", :'data-layout'=>"button_count", :'data-width'=>"450", :'data-show-faces'=>"false"}
+/      .social#social-tw
+/        %a{:href=>"https://twitter.com/TurnChannel", :class=>"twitter-follow-button", :'data-show-count'=>"false", :'data-size'=>"large", :'data-dnt'=>"true"} Follow @TurnChannel
+/- unless current_user
+/  #sign-in-modal.modal.hide.fade
+/    .modal-header
+/      %button{:type=>"button", :class=>"close", :'data-dismiss'=>"modal", :'aria-hidden'=>"true"} &times;
+/      %h3 You must be logged in to do that.
+/    .modal-body
+/      = link_to image_tag('/assets/fb_connect.png'), user_omniauth_authorize_path(:facebook)
+/    .modal-footer
