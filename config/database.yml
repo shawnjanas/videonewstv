@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: videonews_development
+  pool: 5
+  username: videonews
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: videonews_test
+  pool: 5
+  username: videonews
+  password:
