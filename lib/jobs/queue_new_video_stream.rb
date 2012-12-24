@@ -1,8 +1,10 @@
-class QueueInitVideoStream
-  @queue = :high
+class QueueNewVideoStream
+  @queue = :medium
 
-  def self.perform(user_id)
-    if (user = User.find_by_id(user_id))
+  def self.perform
+    User.all.each do |user|
+      next if user.since_id.blank?
+
       auth = user.authentications.first
 
       client = Twitter::Client.new(
@@ -10,8 +12,9 @@ class QueueInitVideoStream
         :oauth_token_secret => auth.token_secret
       )
 
-      video_news = VideoNews.new(auth, user_id)
-      new_since_id = video_news.timeline_tweets
+      since_id = user.since_id
+      video_news = VideoNews.new(auth, user.id)
+      new_since_id = video_news.timeline_tweets(:since_id => since_id)
 
       unless new_since_id.blank?
         user.since_id = new_since_id

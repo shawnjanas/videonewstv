@@ -1,5 +1,5 @@
-#queue_new_tracks:
-#  cron: "1 */1 * * *" # every hour
-#  class: QueueNewTracks
-#  args:
-#  description: "Checks for new tracks"
+queue_new_video_stream:
+  cron: "*/15 * * * *" # every 15 mintues
+  class: QueueNewVideoStream
+  args:
+  description: "Pulls in new videos"

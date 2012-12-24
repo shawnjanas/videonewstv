@@ -1,4 +1,4 @@
-worker_processes 4
+worker_processes 2
 timeout 30
 preload_app true
 
@@ -17,7 +17,6 @@ before_fork do |server, worker|
 
   @resque_schedule_pid ||= spawn("bundle exec rake " + \
   "resque:scheduler")
-  @resque_web_pid ||= spawn("resque-web")
 end
 
 after_fork do |server, worker|

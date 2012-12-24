@@ -8,6 +8,6 @@
       %p{:class=>"notice"}= notice
     - unless alert.blank?
       %p{:class=>"alert"}= alert
-    .container
+    .container.main-container
       = yield
     = render :partial => 'layouts/footer'

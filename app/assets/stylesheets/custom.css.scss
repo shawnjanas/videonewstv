@@ -1,0 +1,72 @@
+@import "bootstrap";
+
+body {
+  background: #F7F5F5;
+}
+
+.container, .navbar-fixed-top .container {
+  width: 1060px;
+}
+
+.main-container {
+  margin-top: 50px;
+}
+
+.video-entry-container {
+  float: left;
+  width: 678px;
+  background: #fff;
+  border: #DDD solid 1px;
+  margin-bottom: 20px;
+  h1 {
+    margin: 10px;
+    font-size: 28px;
+  }
+  .video-entry {
+    float: left;
+    border: #FFF solid 1px;
+    margin: 5px;
+    padding: 5px;
+    &:hover, &.selected {
+      background: #DDD;
+      cursor: pointer;
+    }
+    .video-rank {
+      float: left;
+      text-align: center;
+      width: 50px;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+    .video-details {
+      float: left;
+      margin-left: 5px;
+      width: 479px;
+      h2 {
+        margin-top: 0;
+        font-size: 14px;
+        line-height: 16px;
+        color: #438BC5;
+        width: 460px;
+        float: left;
+      }
+    }
+    .video-thumbnail {
+      float: left;
+      border-top: 1px solid #E2E2F2;
+      border-left: 1px solid #E2E2F2;
+      border-right: 1px solid #C2C2D2;
+      border-bottom: 1px solid #C2C2D2;
+      -moz-box-shadow: 2px 2px 5px 0px #D2D2D2;
+      -webkit-box-shadow: 1px 1px 2px 0px #B2B2C2;
+      -box-shadow: inset 1px 1px 2px 0px #B2B2C2;
+    }
+  }
+}
+
+.right-bar {
+  position: fixed;
+  left: 50%;
+  padding-left: 160px;
+
+}

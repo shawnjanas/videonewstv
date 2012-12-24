@@ -1,0 +1,15 @@
+- if @videos.blank?
+  There were no videos found
+- else
+  - @videos.each_with_index do |video, i|
+    .video-entry{:'video-id' => video[:video_id]}
+      .video-rank
+        = video[:count]
+      .video-thumbnail
+        = image_tag video[:video_info]['thumbnail']
+      .video-details
+        %h2= video[:video_info]['title']
+        - video[:tweets].each do |tweet|
+          .tweet
+            = image_tag tweet['avatar']
+            = "#{tweet['name']} - #{tweet['text']}"

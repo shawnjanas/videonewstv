@@ -1,6 +1,21 @@
 - if current_user.blank?
-  Sign In
-  = link_to 'Connect via Twitter', user_omniauth_authorize_path(:twitter)
+  %h3 The super-easy way to watch videos from your friends
+  %h4 Please login with Twitter
+  = link_to(image_tag('/assets/twitter-signin.png'), user_omniauth_authorize_path(:twitter))
 - else
-  = "Welcome #{current_user.name}!"
-  = image_tag current_user.image
+  - if @user_init
+    .video-entry-container
+      %h1 Videos from your friends
+      = render :partial => 'video_stream'
+    .right-bar
+      #video-player
+        - unless @videos.blank?
+          = raw '<object width="380" height="214"><param name="movie" value="http://www.youtube.com/v/'+@videos.first[:video_id]+'?hl=en_GB&amp;version=3&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/'+@videos.first[:video_id]+'?hl=en_GB&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="380" height="214" allowscriptaccess="always" allowfullscreen="true"></embed></object>'
+
+      .user-info
+        = image_tag current_user.image
+        = "Welcome #{current_user.name}!"
+  - else
+    #user-init
+      %h4= "#{current_user.name}, please wait as we pull in your tweets (This may take a few seconds)..."
+      = image_tag '/assets/loading.gif', :width => 50

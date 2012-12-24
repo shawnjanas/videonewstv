@@ -76,6 +76,7 @@ GEM
     mime-types (1.19)
     multi_json (1.5.0)
     multipart-post (1.1.5)
+    nokogiri (1.5.5)
     oauth (0.4.7)
     oauth2 (0.8.0)
       faraday (~> 0.8)
@@ -185,6 +186,13 @@ GEM
       rack (>= 1.0.0)
     warden (1.2.1)
       rack (>= 1.0)
+    youtube_it (2.1.8)
+      builder
+      faraday (~> 0.8)
+      nokogiri (~> 1.5.2)
+      oauth (~> 0.4.4)
+      oauth2 (~> 0.6)
+      simple_oauth (~> 0.1.5)
 
 PLATFORMS
   ruby
@@ -208,3 +216,4 @@ DEPENDENCIES
   twitter
   uglifier (>= 1.0.3)
   unicorn
+  youtube_it

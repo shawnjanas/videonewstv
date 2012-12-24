@@ -9,6 +9,7 @@ gem 'resque', "~> 1.22.0"
 gem 'resque-scheduler'
 
 gem 'twitter'
+gem 'youtube_it'
 
 gem 'oauth2'
 gem 'omniauth'
